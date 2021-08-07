@@ -1,4 +1,12 @@
 import React from 'react'
+import styled from'styled-components'
+
+const Div = styled.div`
+border: 1px solid black;
+padding: 1px;
+margin: 4px;
+background-color: lightgrey;
+`
 
 export default function TeamMember({ member }) {
     
@@ -9,11 +17,11 @@ export default function TeamMember({ member }) {
 
     
     return (
-        <div className='teamMember container'>
+        <Div className='teamMember container'>
             <h2>{member.fname} {member.lname}</h2>
             <p>Role: {member.role}</p>
             <p>Email: {member.email}</p>
             <p>Phone Number: {member.phoneNumber}</p>
-        </div>
+        </Div>
     )
 }

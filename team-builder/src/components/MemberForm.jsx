@@ -1,3 +1,27 @@
+import styled from 'styled-components'
+
+const Div = styled.div`
+display: flex;
+align-items: center;
+justify-contents: space-between;
+margin: 30px auto;
+
+`
+
+const Form = styled.form`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    background: #f4f4f4;
+    width: 50%;
+    cursor: pointer;
+    margin: 30px auto;
+
+
+
+`
 
 export default function MemberForm(props) {
 
@@ -14,8 +38,8 @@ export default function MemberForm(props) {
     }
 
     return(
-        <form className='form container' onSubmit={onSubmit}>
-            <div className='form-group inputs'>
+        <Form className='form container' onSubmit={onSubmit}>
+            <Div className='form-group inputs'>
                 <label>First Name:
                     <input type='text' value={formValues.fname} name='fname' onChange={onChange} />
                 </label>
@@ -37,9 +61,9 @@ export default function MemberForm(props) {
                     <input type='tel' name='phoneNumber' value={formValues.phoneNumber} onChange={onChange} />
                 </label>
                 
-            </div>
+            </Div>
             
             <button className='button'>Submit</button>
-        </form>
+        </Form>
     )
 }

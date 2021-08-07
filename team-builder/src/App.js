@@ -3,6 +3,19 @@ import TeamMember from './components/TeamMember';
 import React, { useState, useEffect } from 'react';
 import MemberForm from './components/MemberForm';
 import axios from './axios'
+import styled from 'styled-components'
+
+
+const Div = styled.div`
+max-width: 500px;
+margin: 30px auto;
+overflow: auto;
+min-height: 300px;
+padding: 30px;
+border: 1px solid steelblue;
+background-color: grey;
+`
+
 
 const initialFormValues = {
         fname: '', 
@@ -59,9 +72,8 @@ function App() {
     
 
   return (
-    <div className="App">
-
-      
+  <div>
+    <Div className="App">
 
   {
   teamMembers.map(teamMember => {
@@ -70,13 +82,16 @@ function App() {
     )
   })
   }
+  </Div>
+
+  <div>
   <MemberForm 
   formValues={formValues}
   update={updateForm}
-  submit={submitForm}
-  />
-
-    </div>
+  submit={submitForm}/>
+  </div>
+    
+</div>    
   );
 }
 
