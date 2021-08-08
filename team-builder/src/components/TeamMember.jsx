@@ -6,6 +6,7 @@ border: 1px solid black;
 padding: 1px;
 margin: 4px;
 background-color: lightgrey;
+opacity: 1;
 `
 
 export default function TeamMember({ member }) {

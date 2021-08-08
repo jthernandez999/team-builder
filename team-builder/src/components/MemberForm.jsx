@@ -1,11 +1,10 @@
 import styled from 'styled-components'
 
 const Div = styled.div`
-display: flex;
+display: block;
 align-items: center;
 justify-contents: space-between;
-margin: 30px auto;
-
+margin: 75px auto;
 `
 
 const Form = styled.form`
@@ -15,17 +14,16 @@ const Form = styled.form`
     align-items: center;
     align-content: center;
     background: #f4f4f4;
-    width: 50%;
+    width: 90%;
     cursor: pointer;
     margin: 30px auto;
-
-
-
+    opacity: 1;
+    
 `
 
 export default function MemberForm(props) {
 
-    const { formValues, update, submit } = props; 
+    const { formValues, update, submit, close } = props; 
 
     const onChange = evt => {
         const { name, value } = evt.target
@@ -35,6 +33,7 @@ export default function MemberForm(props) {
     const onSubmit = evt => {
         evt.preventDefault()
         submit()
+        close()
     }
 
     return(

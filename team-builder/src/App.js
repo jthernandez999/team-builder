@@ -7,6 +7,7 @@ import styled from 'styled-components'
 
 
 const Div = styled.div`
+
 max-width: 500px;
 margin: 30px auto;
 overflow: auto;
@@ -14,6 +15,7 @@ min-height: 300px;
 padding: 30px;
 border: 1px solid steelblue;
 background-color: grey;
+opacity: 1;
 `
 
 
@@ -49,6 +51,7 @@ function App() {
     const emailIsEmpty = !newTeamMember.email
     const phoneNumberIsEmpty = !newTeamMember.phoneNumber
     if (fnameIsEmpty || lnameIsEmpty || roleIsEmpty || emailIsEmpty || phoneNumberIsEmpty) return
+    document.querySelector('.add-button').style.display= 'flex';
 
   axios
     .post('fakeApi.com', newTeamMember)
@@ -69,7 +72,14 @@ function App() {
     .catch(err => console.log(err))
   }, [])
   
+  const onClick = () => {
+    document.querySelector('.bg-modal').style.display= 'flex';
+    document.querySelector('.add-button').style.display= 'none';
+  }
+  const close = () => {
+      document.querySelector('.bg-modal').style.display = 'none';
     
+  }
 
   return (
   <div>
@@ -84,13 +94,22 @@ function App() {
   }
   </Div>
 
+
   <div>
-  <MemberForm 
+  
+  </div>
+    <div className='bg-modal'>
+      <div className='modal-content'>
+        <div className='close' onClick={close}>+</div>
+      <MemberForm 
   formValues={formValues}
   update={updateForm}
-  submit={submitForm}/>
-  </div>
-    
+  submit={submitForm}
+  close={close}/>
+      </div>
+      
+    </div>
+  <button className='add-button' onClick={onClick}>Add Team Member</button>
 </div>    
   );
 }
