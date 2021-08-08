@@ -2,6 +2,7 @@ import React from 'react'
 import styled from'styled-components'
 
 const Div = styled.div`
+border-radius: 20px;
 border: 1px solid black;
 padding: 1px;
 margin: 4px;

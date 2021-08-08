@@ -5,9 +5,11 @@ display: block;
 align-items: center;
 justify-contents: space-between;
 margin: 75px auto;
+
 `
 
 const Form = styled.form`
+
     display: flex;
     flex-direction: column;
     justify-content: center;

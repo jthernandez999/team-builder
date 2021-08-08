@@ -7,7 +7,7 @@ import styled from 'styled-components'
 
 
 const Div = styled.div`
-
+border-radius: 10px;
 max-width: 500px;
 margin: 30px auto;
 overflow: auto;
